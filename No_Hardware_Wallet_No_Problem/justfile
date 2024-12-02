@@ -1,0 +1,11 @@
+default:
+    pandoc slides.md -t beamer -o slides.pdf
+dot:
+    dot -Tsvg online-offline.dot -o online-offline.svg
+qr1:
+    cat AGE_PASSPHRASE | multiqr --bmp AGE_PASSPHRASE.bmp
+qr2:
+    cat MNEMONIC.age | base32 | multiqr --bmp MNEMONIC.age.bmp
+qr3:
+    cat psbt | multiqr --bmp psbt.bmp --qr-version 14
+

@@ -1,0 +1,5 @@
+default:
+    pandoc slides.md -t beamer -o slides.pdf
+dot:
+    dot -Tsvg online-offline.dot -o online-offline.svg
+

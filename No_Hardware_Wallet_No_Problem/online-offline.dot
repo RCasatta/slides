@@ -1,0 +1,12 @@
+digraph G {
+
+  rankdir="LR";
+
+  A [shape="box", label="online"];
+  B [shape="box", label="offline"];
+
+  A -> B [label="unsigned PSBT"]
+  
+  B -> A [label="signed PSBT"]
+
+}
