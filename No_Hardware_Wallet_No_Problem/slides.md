@@ -35,7 +35,10 @@ offline differenza general purpose
 
 How to transfer information?
 
-* keyboard ([glacier protocol](https://glacierprotocol.org/), rusty's protocol) <!-- mooolto scomodo -->
+* Unclear [greg tutorial](https://gist.github.com/jashmenn/9811205)
+* keyboard <!-- mooolto scomodo -->
+  * [glacier](https://glacierprotocol.org/)
+  * [rusty's protocol](https://github.com/rustyrussell/bitcoin-storage-guide)
 * cable (usb/ethernet) <!-- il punto non era non essere connessi -->
 * radio (blueetoth/wifi) <!-- ancora peggio -->
 * memory (sd card) <!-- non connesso ma tanta banda, plug&play -->
@@ -54,7 +57,7 @@ How to transfer information?
 Feature         | Hardware wallet | GP offline signing
 ----------------|:---------------:|:-----------------:
 User experience | \checkmark      | <!-- Even though the barcode scanner... :) -->
-Review          | \checkmark      | 
+Review          | \checkmark      | <!-- ATM almost delirio di un singolo -->
 Cost            |                 | \checkmark <!-- supposing to have spare devices...-->
 Accountability  |                 | \checkmark <!-- Meaning a raspberry is not meant for bitcoin, evil maid recognize the hww not the pc -->
 Centralization  |                 | \checkmark <!-- Mexican scam of hardware producer, deterministic signing /timing --> 
@@ -66,10 +69,10 @@ Flexibility     |                 | \checkmark <!-- For example sign a bunch of 
   - `derive`
   - `sign`
   - `addresses`
-- [multiqr](https://github.com/RCasatta/multiqr) - QR codes <!-- Tool per stampare qr code a terminale o come bmp, qrencode fa gia' tutto questo, la particolarita' e' quella di spezzare i QR code se il dato non ci sta -->
-- [age](https://github.com/FiloSottile/age) - Encryption tool 
+- [multiqr](https://github.com/RCasatta/multiqr) - QR codes <!-- like qrencode but split -->
+- [age](https://github.com/FiloSottile/age) - Encryption tool <!-- Why not GPG -->
 - [bitcoin core](https://github.com/bitcoin/bitcoin) - Node/Wallet watch-only
-- [nix](https://nixos.org) - Packaging and more
+- [nix](https://nixos.org) - Packaging and more <!-- Nix mondo ma nocciolo dipendenza indicizzata per hash -->
 
 ## Nix - VM
 
@@ -83,8 +86,6 @@ nix run .#vm
 
 ## Nix - Physical
 
-<!-- Nix mondo ma nocciolo dipendenza indicizzata per hash -->
-<!-- come installare cose in  macchina offline -->
 
 ### Create image
 
@@ -106,9 +107,10 @@ sudo pv result/sd-image/nixos-sd-image-...img \
 ![Split mnemonic](two-pieces-puzzle-ai-broken.jpeg){height=60%}
 
 <!-- 
-pezzi non si incastrano
-errori ortografici
-bordi non presenti, AI not there yet 
+AI Fail:
+- pezzi non si incastrano
+- errori ortografici
+- bordi non present
 -->
 <!-- perche' separata, non singolo posto, composta minor tempo possibile -->
 <!-- Out of scope come creare la mnemonica... codex32... -->
@@ -135,7 +137,6 @@ cat - | multiqr --bmp AGE_PASSPHRASE.bmp
 ```
 
 ## Create descriptors (offline)
-
 
 ### Offline
 
